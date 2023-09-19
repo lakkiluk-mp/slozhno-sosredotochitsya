@@ -1,0 +1,39 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+margin: 10px;
+max-inline-size:375px; 
+/* временное решение с размером */
+font-size: 18px;
+margin-inline: auto;
+color: var(--accent-color,pink);
+font-family: "IBM Plex Mono", serif;
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  justify-items: end;
+  
+}
+
+.header__theme-menu-list{
+  display: grid;
+}
+
+
+
+
+.content__paragraph{
+  margin-bottom: 20px;
+}
+
+.colored_paragraph{
+  margin-bottom: 10px;
+ }
+
+
+ .content__text-block{
+  border: 1px solid white ;
+ }
