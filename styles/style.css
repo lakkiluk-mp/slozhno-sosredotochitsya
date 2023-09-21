@@ -1,39 +1,151 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-margin: 10px;
-max-inline-size:375px; 
-/* временное решение с размером */
-font-size: 18px;
-margin-inline: auto;
-color: var(--accent-color,pink);
-font-family: "IBM Plex Mono", serif;
+  padding-inline: clamp(10px, (10vw * 100)/ 376, 20px);
+  margin-block: clamp(10px, (10vw * 100)/ 376, 20px);
+  font-size: 18px;
+  margin-inline: auto;
+  color: var(--accent-major-color, pink);
+  font-family: 'IBM Plex Mono', serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+  background-image: var(--accent-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
-.header{
-  display:grid;
-  grid-template-rows:1fr 1fr;
-  justify-items: end;
-  
+.title-decor {
+  background-color: var(--accent-backgoun-title);
+  font-weight: 700;
+  color: var(--accent-minor-color);
 }
 
-.header__theme-menu-list{
+.header {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
+  align-items: center;
+}
+
+.header__theme-menu {
+  color: var(--accent-backgoun-title);
+  justify-self: end;
+  grid-column-start: 2;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--accent-button-color);
+  border: none;
+}
+
+.header__theme-menu-button:hover {
+  cursor: pointer;
+  outline: 1px solid var(--accent-button-color-hover);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-button-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-button-color);
+  margin-bottom: -1px;
+}
+
+.header__theme-menu-list {
+  padding-block-start: clamp(66px, (66vw * 100)/ 376, 201px);
+  display: grid;
+  gap: 13px;
+}
+
+.content__text-block {
   display: grid;
 }
 
-
-
-
-.content__paragraph{
-  margin-bottom: 20px;
+.paragraph__title-thin {
+  font-weight: 400;
 }
 
-.colored_paragraph{
-  margin-bottom: 10px;
- }
+.major__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  color: var(--accent-header-title-color);
+}
 
+.header__title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 
- .content__text-block{
-  border: 1px solid white ;
- }
+.header .paragraph__content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  block-size: fit-content;
+}
+
+.paragraph__content-artice {
+  text-decoration: none;
+}
+
+.paragraph__content-artice:hover {
+  border-bottom: 1px solid var(--accent-major-color);
+}
+
+.paragraph__content-artice:focus {
+  outline: none;
+}
+
+.paragraph__content-artice:focus-visible {
+  outline: 1px solid var(--accent-major-color);
+}
+
+.content__title {
+  color: var(--accent-content-title-color);
+  font-size: inherit;
+}
+
+.paragraph__title {
+  font-size: inherit;
+}
+
+.content__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.content__img-block {
+  display: grid;
+  gap: clamp(10px, (10vw * 100)/ 376, 20px);
+  grid-auto-flow: row dense;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decorated-zone {
+  min-block-size: 667px;
+}
+
+.major__shadow {
+  text-shadow: 4px 4px 0 var(--accent-backgoun-title);
+}
+
+.minor__shadow {
+  text-shadow: 2px 2px 0 var(--accent-backgoun-title);
+}

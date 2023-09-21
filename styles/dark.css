@@ -1,12 +1,40 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable at-rule-empty-line-before */
+
+:root.theme-dark {
+  --accent-major-color: #f1b2ce;
+  --accent-backgoun-title: #ff0070; /*фон заголовков и 1 параграфа*/
+  --accent-content-title-color: #ff0070;
+  --accent-header-title-color: #db00ff;
+  --accent-minor-color: #000028;
+  --accent-button-color: #ff0070;
+  --accent-button-color-hover: rgba(255, 0, 112, 0.4);
+  --accent-image: url(/images/cover-image-dark.png);
+}
+
 /*
   Специально для тёмной темы при наличии класса,
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
-*/
-
-.page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
+  */
+  
+  .page.theme_dark {
+    /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
-  */
-}
+    */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent-major-color: #f1b2ce;
+      --accent-backgoun-title: #ff0070; /*фон заголовков и 1 параграфа*/
+      --accent-content-title-color: #ff0070;
+      --accent-header-title-color: #db00ff;
+      --accent-minor-color: #000028;
+      --accent-button-color: #ff0070;
+      --accent-button-color-hover: rgba(255, 0, 112, 0.4);
+      --accent-image: url(/images/cover-image-dark.png);
+    }
+  }

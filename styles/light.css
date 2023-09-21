@@ -1,8 +1,22 @@
+/* stylelint-disable rule-empty-line-before */
+:root .theme_light {
+  --accent-major-color: #353430;
+  --accent-backgoun-title: #ffc2e6; /*фон заголовков и 1 параграфа*/
+  --accent-header-title-color: #ff8dcb;
+  --accent-content-title-color: #353430;
+  --accent-minor-color: #353430;
+  --accent-button-color: #353430;
+  /* stylelint-disable-next-line color-function-notation */
+  --accent-button-color-hover: rgba(53, 52, 48, 0.4);
+  --accent-image: url(/images/cover-image-light.png);
+}
+
 /*
   Специально для светлой темы при наличии класса.
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+
 
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
@@ -10,3 +24,24 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-major-color: #353430;
+    --accent-backgoun-title: #ffc2e6; /*фон заголовков и 1 параграфа*/
+    --accent-header-title-color: #ff8dcb;
+    --accent-content-title-color: #353430;
+    --accent-minor-color: #353430;
+    --accent-button-color: #353430;
+    /* stylelint-disable-next-line color-function-notation */
+    --accent-button-color-hover: rgba(53, 52, 48, 0.4);
+    --accent-image: url(/images/cover-image-light.png);
+  }
+}
+
+
+
+
+
+
