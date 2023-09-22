@@ -26,15 +26,3 @@
     */
   }
   
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --accent-major-color: #f1b2ce;
-      --accent-backgoun-title: #ff0070; /*фон заголовков и 1 параграфа*/
-      --accent-content-title-color: #ff0070;
-      --accent-header-title-color: #db00ff;
-      --accent-minor-color: #000028;
-      --accent-button-color: #ff0070;
-      --accent-button-color-hover: rgba(255, 0, 112, 0.4);
-      --accent-image: url(/images/cover-image-dark.png);
-    }
-  }

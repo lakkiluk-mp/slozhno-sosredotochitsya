@@ -1,3 +1,4 @@
+/* stylelint-disable CssSyntaxError */
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
@@ -18,6 +19,48 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
+.theme_dark .psevdo::before {
+  position: absolute;
+  content: 'REC';
+  left: calc(100% - 50px);
+  bottom: calc(100% - 50px);
+}
+
+.theme_dark .psevdo::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-backgoun-title);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 4px var(--accent-backgoun-title));
+  left: calc(100% - 50px);
+  bottom: calc(100% - 50px);
+}
+
+.decoration-corner::before {
+  position: absolute;
+  content: '';
+  border-right: 1px solid var(--accent-button-color);
+  border-top: 1px solid var(--accent-button-color);
+  inline-size: 25px;
+  block-size: 25px;
+  left: calc(100% - clamp(10px, (10vw * 100)/ 376, 20px));
+  bottom: calc(100% - 20px);
+}
+
+.decoration-corner::after {
+  position: absolute;
+  content: '';
+  border-left: 1px solid var(--accent-button-color);
+  border-bottom: 1px solid var(--accent-button-color);
+  inline-size: 25px;
+  block-size: 25px;
+  right: calc(100% - 20px);
+  top: calc(100% - 20px);
+}
+
 .title-decor {
   background-color: var(--accent-backgoun-title);
   font-weight: 700;
@@ -25,6 +68,7 @@
 }
 
 .header {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
@@ -36,6 +80,7 @@
   color: var(--accent-backgoun-title);
   justify-self: end;
   grid-column-start: 2;
+  align-self: end;
 }
 
 .header__theme-menu-button {
@@ -64,13 +109,19 @@
 }
 
 .header__theme-menu-list {
-  padding-block-start: clamp(66px, (66vw * 100)/ 376, 201px);
   display: grid;
   gap: 13px;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(50px, (40vw * 100)/ 376, 80px);
+}
+
 .content__text-block {
   display: grid;
+  gap: 20px;
 }
 
 .paragraph__title-thin {
@@ -92,6 +143,10 @@
   grid-column-start: 1;
   grid-column-end: 3;
   block-size: fit-content;
+}
+
+.content__text-block .paragraph__content {
+  margin-block-start: -10px;
 }
 
 .paragraph__content-artice {
@@ -131,11 +186,17 @@
   gap: clamp(10px, (10vw * 100)/ 376, 20px);
   grid-auto-flow: row dense;
 }
+/* 
+.content__img-block .paragraph__title{
+display: grid;
+
+} */
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .decorated-zone {

@@ -1,4 +1,5 @@
 /* stylelint-disable rule-empty-line-before */
+
 :root .theme_light {
   --accent-major-color: #353430;
   --accent-backgoun-title: #ffc2e6; /*фон заголовков и 1 параграфа*/
@@ -29,12 +30,12 @@
 @media (prefers-color-scheme: light) {
   :root {
     --accent-major-color: #353430;
-    --accent-backgoun-title: #ffc2e6; /*фон заголовков и 1 параграфа*/
+    --accent-backgoun-title: #ffc2e6; 
     --accent-header-title-color: #ff8dcb;
     --accent-content-title-color: #353430;
     --accent-minor-color: #353430;
     --accent-button-color: #353430;
-    /* stylelint-disable-next-line color-function-notation */
+
     --accent-button-color-hover: rgba(53, 52, 48, 0.4);
     --accent-image: url(/images/cover-image-light.png);
   }
