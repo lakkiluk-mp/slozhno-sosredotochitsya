@@ -42,7 +42,7 @@
     border-radius: 50%;
     filter: drop-shadow(0 0 4px var(--accent-backgoun-title));
     left: calc(100% - 18px);
-    top: clamp(10px, (10vw * 100)/ 376, 40px);
+    top: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
   }
 }
 
