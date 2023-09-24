@@ -1,12 +1,7 @@
-
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   display: flex;
   flex-direction: column;
-  margin-inline:auto ;
-  gap: clamp(40px, (40vw * 100)/ 376, 60px);
-  padding-inline: clamp(10px, (10vw * 100)/ 375, 20px);
+  gap: clamp(40px, (40vw * 100)/ 375, 60px);
   font-size: 18px;
   color: var(--accent-major-color, pink);
   font-family: 'IBM Plex Mono', serif;
@@ -18,7 +13,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .decoration-corner::before {
@@ -28,9 +22,8 @@
   border-top: 1px solid var(--accent-button-color);
   inline-size: 25px;
   block-size: 25px;
-  left: calc(100% - 25px);
-  top: clamp(10px, (10vw * 100)/ 376, 20px);
-
+  left: calc(100% - 45px);
+  top: var(--accent-offset-size);
 }
 
 .decoration-corner::after {
@@ -40,12 +33,41 @@
   border-bottom: 1px solid var(--accent-button-color);
   inline-size: 25px;
   block-size: 25px;
-  right: calc(100% - 25px);
-  bottom: clamp(10px, (10vw * 100)/ 376, 20px);;
+  right: calc(100% - 45px);
+  bottom: var(--accent-offset-size);
+}
+
+.psevdo::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-background);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 4px var(--accent-background));
+  left: calc(100% - 38px);
+  top: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
+  visibility: var(--accent-visibility);
+}
+
+.psevdo::before {
+  position: absolute;
+  content: 'REC';
+  left: calc(100% - 80px);
+  top: var(--accent-offset-size);
+  color: #ff0070;
+  visibility: var(--accent-visibility);
+}
+
+.header,
+.main,
+.footer {
+  padding-inline: var(--accent-offset-size);
 }
 
 .title-decor {
-  background-color: var(--accent-backgoun-title);
+  background-color: var(--accent-background);
   font-weight: 700;
   color: var(--accent-minor-color);
 }
@@ -57,11 +79,11 @@
   grid-template-columns: repeat(2, 1fr);
   justify-items: start;
   align-items: center;
-  padding-block: clamp(10px, (10vw * 100)/ 376, 20px);
+  padding-block: var(--accent-offset-size);
 }
 
 .header__theme-menu {
-  color: var(--accent-backgoun-title);
+  color: var(--accent-background);
   justify-self: end;
   grid-column-start: 2;
   align-self: center;
@@ -98,7 +120,6 @@
   gap: 11px;
 }
 
-
 .main {
   display: flex;
   flex-direction: column;
@@ -123,7 +144,6 @@
 .header__title {
   grid-column-start: 1;
   grid-column-end: 3;
-
 }
 
 .header .paragraph__content {
@@ -170,7 +190,7 @@
 
 .content__img-block {
   display: grid;
-  gap: clamp(10px, (10vw * 100)/ 376, 20px);
+  gap: var(--accent-offset-size);
   grid-auto-flow: row dense;
 }
 
@@ -179,7 +199,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding-block: clamp(10px, (10vw * 100)/ 376, 20px);
+  padding-block: var(--accent-offset-size);
 }
 
 .header,
@@ -188,18 +208,18 @@
 }
 
 .major__shadow {
-  text-shadow: 4px 4px 0 var(--accent-backgoun-title);
+  text-shadow: 4px 4px 0 var(--accent-background);
 }
 
 .minor__shadow {
-  text-shadow: 2px 2px 0 var(--accent-backgoun-title);
+  text-shadow: 2px 2px 0 var(--accent-background);
 }
 
 @media (767px < width) {
 
   .major__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-inline-start:-20px;
+    margin-inline-start: -20px;
   }
 
   .header .paragraph__content {
@@ -263,7 +283,6 @@
   .block-2 .paragraph__title {
     grid-column: 1/4;
   }
-
 }
 
 @media (width >= 1024px) {
@@ -291,7 +310,6 @@
   .block-2 .paragraph__content {
     grid-row-start: 3;
   }
-
 
   .paragraph__content.title-decor {
     padding-inline-end: none;

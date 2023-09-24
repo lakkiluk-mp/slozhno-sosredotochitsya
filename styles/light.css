@@ -1,48 +1,27 @@
-:root.theme_light {
-  --accent-major-color: #353430;
-  --accent-backgoun-title: #ffc2e6; /*фон заголовков и 1 параграфа*/
-  --accent-header-title-color: #ff8dcb;
-  --accent-content-title-color: #353430;
-  --accent-minor-color: #353430;
-  --accent-button-color: #353430;
-  --accent-button-color-hover: rgb(53 52 48 / 0.4);
-  --accent-image: url(/images/cover-image-light.png);
-}
-
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
 
 .page.theme_light {
-  color: var(--accent-major-color, red);
-  background-image: var(--accent-image);
   --accent-major-color: #353430;
-  --accent-backgoun-title: #ffc2e6; /*фон заголовков и 1 параграфа*/
+  --accent-background: #ffc2e6;
   --accent-header-title-color: #ff8dcb;
   --accent-content-title-color: #353430;
   --accent-minor-color: #353430;
   --accent-button-color: #353430;
   --accent-button-color-hover: rgb(53 52 48 / 0.4);
   --accent-image: url(/images/cover-image-light.png);
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --accent-visibility:hidden;
 }
 
 @media (prefers-color-scheme: light) {
 
   :root {
     --accent-major-color: #353430;
-    --accent-backgoun-title: #ffc2e6;
+    --accent-background: #ffc2e6;
     --accent-header-title-color: #ff8dcb;
     --accent-content-title-color: #353430;
     --accent-minor-color: #353430;
     --accent-button-color: #353430;
-
     --accent-button-color-hover: rgb(53 52 48 / 0.4);
     --accent-image: url(/images/cover-image-light.png);
+    --accent-visibility:hidden;
   }
 }

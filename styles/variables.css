@@ -1,13 +1,15 @@
 
 :root {
   --accent-major-color: #f1b2ce;
-  --accent-backgoun-title: #ff0070; /*фон заголовков и 1 параграфа*/
+  --accent-background: #ff0070; 
   --accent-header-title-color: #db00ff;
   --accent-content-title-color: #ff0070;
   --accent-button-color: #ff0070;
   --accent-button-color-hover: rgb(255 0 112 / 0.4);
   --accent-minor-color: #000028;
   --accent-image: url(/images/cover-image-dark.png);
+  --accent-visibility:visible;
+  --accent-offset-size:clamp(10px, (10vw * 100)/ 375, 20px);
 }
 /*
   Переменные для вашего проекта
