@@ -1,12 +1,11 @@
-:root.theme-dark {
-  --accent-major-color: #f1b2ce;
+:root.theme_dark {
+ --accent-major-color: #f1b2ce;
   --accent-backgoun-title: #ff0070; /*фон заголовков и 1 параграфа*/
   --accent-content-title-color: #ff0070;
   --accent-header-title-color: #db00ff;
   --accent-minor-color: #000028;
   --accent-button-color: #ff0070;
-  --accent-button-color-hover: rgb(255 0 112 / 0.4);
-  --accent-image: url(/images/cover-image-dark.png);
+  --accent-button-color-hover: rgb(255 0 112 / 0.4); 
 }
 
 /*
@@ -16,42 +15,20 @@
   */
 
 .page.theme_dark {
+
+  background-image: url(/images/cover-image-dark.png);
+  --accent-major-color: #f1b2ce;
+  --accent-backgoun-title: #ff0070; /*фон заголовков и 1 параграфа*/
+  --accent-content-title-color: #ff0070;
+  --accent-header-title-color: #db00ff;
+  --accent-minor-color: #000028;
+  --accent-button-color: #ff0070;
+  --accent-button-color-hover: rgb(255 0 112 / 0.4); 
+
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
     */
-}
-
-@media (prefers-color-scheme: dark) {
-  
-  .theme_auto .psevdo::before {
-    position: absolute;
-    content: 'REC';
-    left: calc(100% - 60px);
-    top: clamp(10px, (10vw * 100)/ 376, 20px);
-    color: #ff0070;
-  }
-
-  .theme_auto .psevdo::after {
-    position: absolute;
-    display: inline-block;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: var(--accent-backgoun-title);
-    border-radius: 50%;
-    filter: drop-shadow(0 0 4px var(--accent-backgoun-title));
-    left: calc(100% - 18px);
-    top: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
-  }
-}
-
-.theme_dark .psevdo::before {
-  position: absolute;
-  content: 'REC';
-  left: calc(100% - 60px);
-  top: clamp(10px, (10vw * 100)/ 375, 20px);
-  color: #ff0070;
 }
 
 .theme_dark .psevdo::after {
@@ -67,3 +44,35 @@
 
   top: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
 }
+
+.theme_dark .psevdo::before {
+  position: absolute;
+  content: 'REC';
+  left: calc(100% - 60px);
+  top: clamp(10px, (10vw * 100)/ 375, 20px);
+  color: #ff0070;
+}
+
+@media (prefers-color-scheme: dark) {
+  
+.theme_auto .psevdo::before {
+    position: absolute;
+    content: 'REC';
+    left: calc(100% - 60px);
+    top: clamp(10px, (10vw * 100)/ 375, 20px);
+    color: #ff0070;}
+
+  .theme_auto .psevdo::after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-backgoun-title);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 4px var(--accent-backgoun-title));
+    left: calc(100% - 18px);
+    top: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
+  }
+}
+
