@@ -1,18 +1,17 @@
-
 .page.theme_light {
   --accent-major-color: #353430;
-  --accent-background: #ffc2e6;
-  --accent-header-title-color: #ff8dcb;
+  --accent-background: #ff8dcb;
+  --accent-header-title-color: #ffc2e6;
   --accent-content-title-color: #353430;
   --accent-minor-color: #353430;
   --accent-button-color: #353430;
   --accent-button-color-hover: rgb(53 52 48 / 0.4);
   --accent-image: url(/images/cover-image-light.png);
-  --accent-visibility:hidden;
+  --accent-visibility: hidden;
 }
 
 @media (prefers-color-scheme: light) {
-
+  
   :root {
     --accent-major-color: #353430;
     --accent-background: #ffc2e6;
@@ -22,6 +21,6 @@
     --accent-button-color: #353430;
     --accent-button-color-hover: rgb(53 52 48 / 0.4);
     --accent-image: url(/images/cover-image-light.png);
-    --accent-visibility:hidden;
+    --accent-visibility: hidden;
   }
 }

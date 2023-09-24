@@ -22,7 +22,7 @@
   border-top: 1px solid var(--accent-button-color);
   inline-size: 25px;
   block-size: 25px;
-  left: calc(100% - 35px);
+  right: var(--accent-offset-size);
   top: var(--accent-offset-size);
 }
 
@@ -33,7 +33,7 @@
   border-bottom: 1px solid var(--accent-button-color);
   inline-size: 25px;
   block-size: 25px;
-  right: calc(100% - 35px);
+  left: var(--accent-offset-size);
   bottom: var(--accent-offset-size);
 }
 
@@ -46,7 +46,7 @@
   background-color: var(--accent-background);
   border-radius: 50%;
   filter: drop-shadow(0 0 4px var(--accent-background));
-  left: calc(100% - 28px);
+  right: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
   top: clamp(17px, (((14.5vw * 100)/ 375)), 28px);
   visibility: var(--accent-visibility);
 }
@@ -54,7 +54,7 @@
 .psevdo::before {
   position: absolute;
   content: 'REC';
-  left: calc(100% - 70px);
+  right: clamp(35px, (((35vw * 100)/ 375)), 45px);
   top: var(--accent-offset-size);
   color: #ff0070;
   visibility: var(--accent-visibility);
@@ -205,6 +205,7 @@
 .header,
 .footer {
   min-block-size: 100vh;
+  width: 100%;
 }
 
 .major__shadow {
