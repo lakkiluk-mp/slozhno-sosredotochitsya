@@ -9,4 +9,5 @@
   --accent-image: url(/images/cover-image-dark.png);
   --accent-visibility: visible;
   --accent-offset-size: clamp(10px, (10vw * 100)/ 375, 20px);
+  --accent-fone: #000028;
 }
