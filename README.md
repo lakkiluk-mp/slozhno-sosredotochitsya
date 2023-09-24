@@ -1,5 +1,2 @@
-# Зависимости
 
-```bash
-npm i
-```
+Проект "Сложно сосредоточиться" https://github.com/lakkiluk-mp/slozhno-sosredotochitsya
