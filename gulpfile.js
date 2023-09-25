@@ -8,7 +8,7 @@ const autoprefixer = require('autoprefixer');
 const mediaquery = require('postcss-combine-media-query');
 const htmlMinify = require('html-minifier');
 const uglify = require('gulp-uglify');
-
+const modifyHTMLlinks = require('gulp-processhtml');
 function serve() {
   browserSync.init({
     server: {
@@ -29,15 +29,18 @@ function html() {
     minifyCSS: true,
     keepClosingSlash: true,
   };
+
   return gulp
     .src('./index.html')
     .pipe(plumber())
+    .pipe(modifyHTMLlinks())
     .on('data', function (file) {
       const buferFile = Buffer.from(
         htmlMinify.minify(file.contents.toString(), options)
       );
       return (file.contents = buferFile);
     })
+
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -87,14 +90,14 @@ function watchFiles() {
   gulp.watch(['./scripts/*.js'], js);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, images, fonts, js));
+const build = gulp.series(clean, gulp.parallel(css, images, fonts, js, html));
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
-exports.html = html;
 exports.css = css;
 exports.images = images;
 exports.fonts = fonts;
 exports.js = js;
+exports.html = html;
 exports.clean = clean;
 
 exports.build = build;
