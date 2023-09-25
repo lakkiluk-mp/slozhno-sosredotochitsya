@@ -6,7 +6,7 @@
   --accent-button-color: #ff0070;
   --accent-button-color-hover: rgb(255 0 112 / 0.4);
   --accent-minor-color: #000028;
-  --accent-image: url(/images/cover-image-dark.png);
+  --accent-image: url(../images/cover-image-dark.png);
   --accent-visibility: visible;
   --accent-offset-size: clamp(10px, (10vw * 100)/ 375, 20px);
   --accent-fone: #000028;
